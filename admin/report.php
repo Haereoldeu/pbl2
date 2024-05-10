@@ -56,11 +56,11 @@ function ordinal_suffix($num){
 			<hr>
 			<table width="100%">
 					<tr>
-						<td width="50%"><p><b>Faculty: <span id="fname"></span></b></p></td>
+						<td width="50%"><p><b>Coach: <span id="fname"></span></b></p></td>
 						<td width="50%"><p><b>Academic Year: <span id="ay"><?php echo $_SESSION['academic']['year'].' '.(ordinal_suffix($_SESSION['academic']['semester'])) ?> Semester</span></b></p></td>
 					</tr>
 					<tr>
-						<td width="50%"><p><b>Class: <span id="classField"></span></b></p></td>
+						<td width="50%"><p><b>Program: <span id="classField"></span></b></p></td>
 						<td width="50%"><p><b>Subject: <span id="subjectField"></span></b></p></td>
 					</tr>
 			</table>

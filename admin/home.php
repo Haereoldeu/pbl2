@@ -28,7 +28,7 @@ $astat = array("Not Yet Started","On-going","Closed");
               <div class="inner">
                 <h3><?php echo $conn->query("SELECT * FROM faculty_list ")->num_rows; ?></h3>
 
-                <p>Total Faculties</p>
+                <p>Total Coach</p>
               </div>
               <div class="icon">
                 <i class="fa fa-user-friends"></i>
@@ -40,7 +40,7 @@ $astat = array("Not Yet Started","On-going","Closed");
               <div class="inner">
                 <h3><?php echo $conn->query("SELECT * FROM student_list")->num_rows; ?></h3>
 
-                <p>Total Students</p>
+                <p>Total Athelete</p>
               </div>
               <div class="icon">
                 <i class="fa ion-ios-people-outline"></i>
@@ -64,7 +64,7 @@ $astat = array("Not Yet Started","On-going","Closed");
               <div class="inner">
                 <h3><?php echo $conn->query("SELECT * FROM class_list")->num_rows; ?></h3>
 
-                <p>Total Classes</p>
+                <p>Total Programs</p>
               </div>
               <div class="icon">
                 <i class="fa fa-list-alt"></i>

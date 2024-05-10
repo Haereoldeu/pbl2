@@ -29,7 +29,7 @@
             <a href="./index.php?page=class_list" class="nav-link nav-class_list">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
-                Classes
+                Programs
               </p>
             </a>
           </li> 
@@ -53,7 +53,7 @@
             <a href="./index.php?page=criteria_list" class="nav-link nav-criteria_list">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
-                Evaluation Critria
+                Evaluation Criteria
               </p>
             </a>
           </li> 
@@ -61,7 +61,7 @@
             <a href="#" class="nav-link nav-edit_faculty">
               <i class="nav-icon fas fa-user-friends"></i>
               <p>
-                Faculties
+                Coaches
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -84,7 +84,7 @@
             <a href="#" class="nav-link nav-edit_student">
               <i class="nav-icon fa ion-ios-people-outline"></i>
               <p>
-                 Students
+                 Athelete
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
