@@ -1,7 +1,7 @@
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <div class="dropdown">
    	<a href="./" class="brand-link">
-        <h3 class="text-center p-0 m-0"><b>Student Panel</b></h3>
+        <h3 class="text-center p-0 m-0"><b>Athelete's Panel</b></h3>
 
     </a>
       
