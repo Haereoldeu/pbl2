@@ -16,7 +16,7 @@ function ordinal_suffix($num){
 <div class="col-lg-12">
 	<div class="callout callout-info">
 		<div class="d-flex w-100 justify-content-center align-items-center">
-			<label for="faculty">Select Faculty</label>
+			<label for="faculty">Select Coach</label>
 			<div class=" mx-2 col-md-4">
 			<select name="" id="faculty_id" class="form-control form-control-sm select2">
 				<option value=""></option>
@@ -64,7 +64,7 @@ function ordinal_suffix($num){
 						<td width="50%"><p><b>Subject: <span id="subjectField"></span></b></p></td>
 					</tr>
 			</table>
-				<p class=""><b>Total Student Evaluated: <span id="tse"></span></b></p>
+				<p class=""><b>Total Athlete Evaluated: <span id="tse"></span></b></p>
 			</div>
 				<fieldset class="border border-info p-2 w-100">
 				   <legend  class="w-auto">Rating Legend</legend>

@@ -35,20 +35,7 @@ include '../db_connect.php';
 						<?php endwhile; ?>
 					</select>
 				</div>
-				<div class="form-group">
-					<label for="" class="control-label">Subject</label>
-					<select name="" id="subject_id" class="form-control form-control-sm select2">
-						<option value=""></option>
-						<?php 
-						$subject = $conn->query("SELECT id,concat(code,' - ',subject) as subj FROM subject_list");
-						$s_arr = array();
-						while($row=$subject->fetch_assoc()):
-							$s_arr[$row['id']]= $row;
-						?>
-						<option value="<?php echo $row['id'] ?>" <?php echo isset($subject_id) && $subject_id == $row['id'] ? "selected" : "" ?>><?php echo $row['subj'] ?></option>
-						<?php endwhile; ?>
-					</select>
-				</div>
+		
 				<div class="form-group">
 					<div class="d-flex w-100 justify-content-center">
 						<button class="btn btn-sm btn-flat btn-primary bg-gradient-primary" id="add_to_list" type="button">Add to List</button>

@@ -18,14 +18,6 @@
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a href="./index.php?page=subject_list" class="nav-link nav-subject_list">
-              <i class="nav-icon fas fa-th-list"></i>
-              <p>
-                Subjects
-              </p>
-            </a>
-          </li> 
-          <li class="nav-item dropdown">
             <a href="./index.php?page=class_list" class="nav-link nav-class_list">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
