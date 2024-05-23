@@ -12,7 +12,7 @@ if(isset($_GET['id'])){
 		<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div id="msg" class="form-group"></div>
 		<div class="form-group">
-			<label for="curriculum" class="control-label">Curriculum</label>
+			<label for="curriculum" class="control-label">Program</label>
 			<input type="text" class="form-control form-control-sm" name="curriculum" id="curriculum" value="<?php echo isset($curriculum) ? $curriculum : '' ?>" required>
 		</div>
 		<div class="form-group">

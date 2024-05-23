@@ -61,7 +61,7 @@ function ordinal_suffix($num){
 					</tr>
 					<tr>
 						<td width="50%"><p><b>Program: <span id="classField"></span></b></p></td>
-						<td width="50%"><p><b>Subject: <span id="subjectField"></span></b></p></td>
+						<td width="50%"><p><b>Position: <span id="subjectField"></span></b></p></td>
 					</tr>
 			</table>
 				<p class=""><b>Total Athlete Evaluated: <span id="tse"></span></b></p>

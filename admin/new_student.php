@@ -20,7 +20,7 @@
 							<input type="text" name="lastname" class="form-control form-control-sm" required value="<?php echo isset($lastname) ? $lastname : '' ?>">
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Class</label>
+							<label for="" class="control-label">Program</label>
 							<select name="class_id" id="class_id" class="form-control form-control-sm select2">
 								<option value=""></option>
 								<?php 
@@ -66,6 +66,8 @@
 					<button class="btn btn-primary mr-2">Save</button>
 					<button class="btn btn-secondary" type="button" onclick="location.href = 'index.php?page=student_list'">Cancel</button>
 				</div>
+
+    <script src="script.js"></script>
 			</form>
 		</div>
 	</div>

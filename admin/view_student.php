@@ -27,7 +27,7 @@ $class = $classes->num_rows > 0 ? $classes->fetch_array()['class'] : 'N/A';
           <dl>
             <dt>School ID</dt>
             <dd><?php echo $school_id ?></dd>
-            <dt>Current Class</dt>
+            <dt>Current Program</dt>
             <dd><?php echo $class ?></dd>
           </dl>
         </div>

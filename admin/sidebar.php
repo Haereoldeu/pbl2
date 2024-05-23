@@ -24,7 +24,15 @@
                 Programs
               </p>
             </a>
-          </li> 
+          </li>
+          <li class="nav-item dropdown">
+            <a href="./index.php?page=subject_list" class="nav-link nav-subject_list">
+              <i class="nav-icon fas fa-th-list"></i>
+              <p>
+                Subjects
+              </p>
+            </a>
+          </li>  
           <li class="nav-item dropdown">
             <a href="./index.php?page=academic_list" class="nav-link nav-academic_list">
               <i class="nav-icon fas fa-calendar"></i>
@@ -76,7 +84,7 @@
             <a href="#" class="nav-link nav-edit_student">
               <i class="nav-icon fa ion-ios-people-outline"></i>
               <p>
-                 Athelete
+                 Athlete
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
