@@ -56,6 +56,14 @@
                 Evaluation Criteria
               </p>
             </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="./index.php?page=user_logs" class="nav-link nav-user_logs">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User Logs
+              </p>
+            </a>
           </li> 
           <li class="nav-item">
             <a href="#" class="nav-link nav-edit_faculty">
@@ -134,6 +142,7 @@
               </li>
             </ul>
           </li>
+          
         </ul>
       </nav>
     </div>

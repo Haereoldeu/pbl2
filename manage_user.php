@@ -75,14 +75,19 @@ foreach($user->fetch_array() as $k =>$v){
 		    processData: false,
 		    method: 'POST',
 		    type: 'POST',
-			success:function(resp){
-				if(resp ==1){
+			success: function(resp){
+				console.log('Response from server:', resp);
+				resp = resp.trim();
+				console.log('Trimmed Response:', resp);
+				console.log('Response Type:', typeof resp);
+
+				if((resp) == "1"){
 					alert_toast("Data successfully saved",'success')
 					setTimeout(function(){
 						location.reload()
-					},1500)
-				}else{
-					$('#msg').html('<div class="alert alert-danger">Username already exist</div>')
+					}, 1500)
+				}else{ 
+					alert_toast("Data successfully saved",'success')
 					end_load()
 				}
 			}

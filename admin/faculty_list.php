@@ -50,10 +50,10 @@
 <script>
 	$(document).ready(function(){
 	$('.view_faculty').click(function(){
-		uni_modal("<i class='fa fa-id-card'></i> Faculty Details","<?php echo $_SESSION['login_view_folder'] ?>view_faculty.php?id="+$(this).attr('data-id'))
+		uni_modal("<i class='fa fa-id-card'></i> Coach Details","<?php echo $_SESSION['login_view_folder'] ?>view_faculty.php?id="+$(this).attr('data-id'))
 	})
 	$('.delete_faculty').click(function(){
-	_conf("Are you sure to delete this faculty?","delete_faculty",[$(this).attr('data-id')])
+	_conf("Are you sure to delete this coach?","delete_faculty",[$(this).attr('data-id')])
 	})
 		$('#list').dataTable()
 	})

@@ -34,10 +34,17 @@
 							<small id="#msg"></small>
 						</div>
 						<div class="form-group">
-							<label class="control-label">Password</label>
-							<input type="password" class="form-control form-control-sm" name="password" <?php echo !isset($id) ? "required":'' ?>>
-							<small><i><?php echo isset($id) ? "Leave this blank if you dont want to change you password":'' ?></i></small>
+    					<label class="control-label">Password</label>
+    						<input type="password" class="form-control form-control-sm" id="password" name="password" <?php echo !isset($id) ? "required":'' ?> pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}">
+    						<small>
+        						<i>
+            					<?php echo isset($id) ? "Leave this blank if you don't want to change your password":'' ?>
+            					Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character (@, #, $, %, ^, &, +, =).
+        						</i>
+    						</small>
+    					<div id="passwordFeedback"></div>
 						</div>
+						<script src="script.js"></script>
 						<div class="form-group">
 							<label class="label control-label">Confirm Password</label>
 							<input type="password" class="form-control form-control-sm" name="cpass" <?php echo !isset($id) ? 'required' : '' ?>>
