@@ -29,7 +29,7 @@
             <a href="./index.php?page=subject_list" class="nav-link nav-subject_list">
               <i class="nav-icon fas fa-th-list"></i>
               <p>
-                Subjects
+                Events
               </p>
             </a>
           </li>  
@@ -57,14 +57,6 @@
               </p>
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a href="./index.php?page=user_logs" class="nav-link nav-user_logs">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                User Logs
-              </p>
-            </a>
-          </li> 
           <li class="nav-item">
             <a href="#" class="nav-link nav-edit_faculty">
               <i class="nav-icon fas fa-user-friends"></i>

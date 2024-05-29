@@ -19,7 +19,7 @@
 					<tr>
 						<th class="text-center">#</th>
 						<th>Code</th>
-						<th>Subject</th>
+						<th>Events</th>
 						<th>Description</th>
 						<th>Action</th>
 					</tr>
@@ -55,7 +55,7 @@
 <script>
 	$(document).ready(function(){
 		$('.new_subject').click(function(){
-			uni_modal("New subject","<?php echo $_SESSION['login_view_folder'] ?>manage_subject.php")
+			uni_modal("New events","<?php echo $_SESSION['login_view_folder'] ?>manage_subject.php")
 		})
 		$('.manage_subject').click(function(){
 			uni_modal("Manage subject","<?php echo $_SESSION['login_view_folder'] ?>manage_subject.php?id="+$(this).attr('data-id'))

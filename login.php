@@ -11,37 +11,6 @@ include('db_connect.php');
       $_SESSION['system'][$k] = $v;
     }
   // }
-  
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Query to check the user's credentials
-    $query = "SELECT * FROM student_list WHERE email = '$email' AND password = '$password'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['email'] = $user['email'];
-
-        // Log the event
-        $user_id = $user['id'];
-        $event = 'login';
-        $logged_in = date('Y-m-d H:i:s');
-        $log_query = "INSERT INTO user_logs (user_id, event, logged_in) VALUES ('$user_id', '$event', '$logged_in')";
-        $conn->query($log_query);
-
-        // Redirect to a protected page or dashboard
-        header("Location: dashboard.php");
-        exit;
-    } else {
-        echo "Invalid email or password";
-        echo "<script>alert('Invalid email or password');</script>";
-    }
-}
-
-  ob_end_flush();
 
 if(isset($_SESSION['login_id']))
 header("location:index.php?page=home");

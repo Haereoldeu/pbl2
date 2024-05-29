@@ -37,7 +37,7 @@ include '../db_connect.php';
 				</div>
 
 				<div class="form-group">
-					<label for="" class="control-label">Subject</label>
+					<label for="" class="control-label">Events</label>
 					<select name="" id="subject_id" class="form-control form-control-sm select2">
 						<option value=""></option>
 						<?php 
@@ -63,7 +63,7 @@ include '../db_connect.php';
 						<tr>
 							<th>Coach</th>
 							<th>Program</th>
-							<th>Subject</th>
+							<th>Events</th>
 							<th>Action</th>
 						</tr>
 					</thead>

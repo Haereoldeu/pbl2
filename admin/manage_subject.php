@@ -12,11 +12,11 @@ if(isset($_GET['id'])){
 		<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div id="msg" class="form-group"></div>
 		<div class="form-group">
-			<label for="subject" class="control-label">Subject Code</label>
+			<label for="subject" class="control-label">Code</label>
 			<input type="text" class="form-control form-control-sm" name="code" id="code" value="<?php echo isset($code) ? $code : '' ?>" required>
 		</div>
 		<div class="form-group">
-			<label for="subject" class="control-label">Subject</label>
+			<label for="subject" class="control-label">Events</label>
 			<input type="text" class="form-control form-control-sm" name="subject" id="subject" value="<?php echo isset($subject) ? $subject : '' ?>" required>
 		</div>
 		<div class="form-group">

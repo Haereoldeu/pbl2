@@ -1,5 +1,6 @@
 <?php 
 include 'db_connect.php';
+
 ?>
 <div class="head">
             <h1>USER'S EVENT LOGS</h1>
@@ -30,11 +31,10 @@ include 'db_connect.php';
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['user_id'] . "</td>";
                 echo "<td>" . $row['event'] . "</td>";
-                echo "<td>" . $row['logged_in'] . "</td>";
+                echo "<td>" . $row['logged_on'] . "</td>";
                 echo "</tr>";
             }
         } else {
             // If no records found, display a message
             echo "<tr><td colspan='4'>No records found</td></tr>";
         }
-
