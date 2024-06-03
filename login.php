@@ -22,8 +22,8 @@ header("location:index.php?page=home");
     style="
     background: no-repeat;
     background-image: url('./images/bg2.png');
-    height: 100vh;
-    width: 100%;
+    height: 115vh;
+    width: 100%;  
   "
 >
   <h2 class="text-white"><b>CAD Evaluation System</b></h2>

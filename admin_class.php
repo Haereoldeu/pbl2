@@ -15,30 +15,94 @@ Class Action {
 	    ob_end_flush();
 	}
 
-	function login(){
+	function login() {
 		extract($_POST);
-		$type = array("","users","faculty_list","student_list");
-		$type2 = array("","admin","faculty","student");
-		$qry = $this->db->query("SELECT *,concat(firstname,' ',lastname) as name FROM {$type[$login]} where email = '".$email."' and password = '".md5($password)."'  ");
-		if($qry->num_rows > 0){
-			foreach ($qry->fetch_array() as $key => $value) {
-				if($key != 'password' && !is_numeric($key))
-					$_SESSION['login_'.$key] = $value;
-			}
-					$_SESSION['login_type'] = $login;
-					$_SESSION['login_view_folder'] = $type2[$login].'/';
-		$academic = $this->db->query("SELECT * FROM academic_list where is_default = 1 ");
-		if($academic->num_rows > 0){
-			foreach($academic->fetch_array() as $k => $v){
-				if(!is_numeric($k))
-					$_SESSION['academic'][$k] = $v;
-			}
+	
+		// Define user types
+		$type = array("", "users", "faculty_list", "student_list");
+		$type2 = array("", "admin", "faculty", "student");
+	
+		// Sanitize inputs
+		$email = $this->db->real_escape_string($email);
+		$password = $this->db->real_escape_string($password);
+	
+		// Prepare the statement to prevent SQL injection
+		if (!isset($type[$login])) {
+			$event = 'Login failed: invalid user type';
+			$log_type = 'unknown';
+			$log_date = date("Y-m-d H:i:s");
+	
+			// Log invalid user type attempt
+			$log_stmt = $this->db->prepare("INSERT INTO logs (event, type, date) VALUES (?, ?, ?)");
+			$log_stmt->bind_param("sss", $event, $log_type, $log_date);
+			$log_stmt->execute();
+	
+			return 4; // Invalid user type
 		}
-				return 1;
-		}else{
-			return 2;
+	
+		$query = "SELECT *, concat(firstname, ' ', lastname) as name FROM {$type[$login]} WHERE email = ? LIMIT 1";
+		$stmt = $this->db->prepare($query);
+		$stmt->bind_param("s", $email);
+		$stmt->execute();
+		$result = $stmt->get_result();
+	
+		$event = '';
+		$log_type = $type2[$login];
+		$log_date = date("Y-m-d H:i:s");
+	
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+	
+			// Check if password matches
+			if (md5($password) == $row['password']) {
+				// Set session variables for successful login
+				foreach ($row as $key => $value) {
+					if ($key != 'password' && !is_numeric($key)) {
+						$_SESSION['login_'.$key] = $value;
+					}
+				}
+				$_SESSION['login_type'] = $login;
+				$_SESSION['login_view_folder'] = $type2[$login].'/';
+	
+				// Fetch and set academic session variables
+				$academic = $this->db->query("SELECT * FROM academic_list WHERE is_default = 1");
+				if ($academic->num_rows > 0) {
+					foreach ($academic->fetch_array() as $k => $v) {
+						if (!is_numeric($k)) {
+							$_SESSION['academic'][$k] = $v;
+						}
+					}
+				}
+				$event = 'Login successful';
+	
+				// Insert log for successful login
+				$log_stmt = $this->db->prepare("INSERT INTO logs (event, type, date) VALUES (?, ?, ?)");
+				$log_stmt->bind_param("sss", $event, $log_type, $log_date);
+				$log_stmt->execute();
+	
+				return 1; // Successful login
+			} else {
+				$event = 'Login failed: incorrect password';
+	
+				// Insert log for failed login due to incorrect password
+				$log_stmt = $this->db->prepare("INSERT INTO logs (event, type, date) VALUES (?, ?, ?)");
+				$log_stmt->bind_param("sss", $event, $log_type, $log_date);
+				$log_stmt->execute();
+	
+				return 2; // Incorrect password
+			}
+		} else {
+			$event = 'Login failed: email not found';
+	
+			// Insert log for failed login due to email not found
+			$log_stmt = $this->db->prepare("INSERT INTO logs (event, type, date) VALUES (?, ?, ?)");
+			$log_stmt->bind_param("sss", $event, $log_type, $log_date);
+			$log_stmt->execute();
+	
+			return 3; // Email not found
 		}
 	}
+	
 	function logout(){
 		session_destroy();
 		foreach ($_SESSION as $key => $value) {
