@@ -21,8 +21,9 @@ include '../db_connect.php';
 						<?php endwhile; ?>
 					</select>
 				</div>
+
 				<div class="form-group">
-					<label for="" class="control-label">Program</label>
+					<label for="" class="control-label">Events</label>
 					<select name="" id="class_id" class="form-control form-control-sm select2">
 						<option value=""></option>
 						<?php 
@@ -37,7 +38,7 @@ include '../db_connect.php';
 				</div>
 
 				<div class="form-group">
-					<label for="" class="control-label">Events</label>
+					<label for="" class="control-label">Code</label>
 					<select name="" id="subject_id" class="form-control form-control-sm select2">
 						<option value=""></option>
 						<?php 

@@ -40,7 +40,7 @@ $astat = array("Not Yet Started","On-going","Closed");
               <div class="inner">
                 <h3><?php echo $conn->query("SELECT * FROM student_list")->num_rows; ?></h3>
 
-                <p>Total Athelete</p>
+                <p>Total Athlete</p>
               </div>
               <div class="icon">
                 <i class="fa ion-ios-people-outline"></i>
