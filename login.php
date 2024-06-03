@@ -18,15 +18,22 @@ header("location:index.php?page=home");
 
 
 <?php include 'header.php' ?>
-<body class="hold-transition login-page bg-black">
-  <h2><b>CAD Evaluation System</b></h2>
+<body class="hold-transition login-page"  
+    style="
+    background: no-repeat;
+    background-image: url('./images/bg2.png');
+    height: 100vh;
+    width: 100%;
+  "
+>
+  <h2 class="text-white"><b>CAD Evaluation System</b></h2>
 <div class="login-box">
   <div class="login-logo">
     <a href="#" class="text-white"></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
+    <div class="card-body login-card-body bg-transparent">
       <form action="" id="login-form">
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" required placeholder="Email">
