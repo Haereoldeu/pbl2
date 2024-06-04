@@ -75,11 +75,11 @@ Class Action {
 				}
 				$event = 'Login successful';
 	
-				// Insert log for successful login
+				// Insert log for successful login 
+				// $this->db->query("Insert Into logs(event,type,date) values ({$event}, {$log_type}, {$log_date})");
 				$log_stmt = $this->db->prepare("INSERT INTO logs (event, type, date) VALUES (?, ?, ?)");
 				$log_stmt->bind_param("sss", $event, $log_type, $log_date);
 				$log_stmt->execute();
-	
 				return 1; // Successful login
 			} else {
 				$event = 'Login failed: incorrect password';
